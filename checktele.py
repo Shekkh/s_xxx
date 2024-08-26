@@ -51,64 +51,65 @@ def check_user(username):
 
 
 def gen_user(choice):
-    if choice == "رباعي":
+    if choice == "سداسي":
         c = d = random.choices(a)
         d = random.choices(e)
-        f = [c[0], "_", d[0], d[0], d[0]]
+        f = [c[0], c[0], c[0], d[0], d[0], d[0]]
         random.shuffle(f)
         username = ''.join(f)
         if username in banned[0]:
             c = d = random.choices(a)
-            d = random.choices(e)
-            f = [c[0], "_", d[0], d[0], d[0]]
+            d = random.choices(a)
+            f = [c[0], c[0], c[0], d[0], d[0], d[0]]
             random.shuffle(f)
             username = ''.join(f)
         else:
             pass
-    elif choice == "رباعي1":
+    elif choice == "رباعي":
         c = d = random.choices(a)
         d = random.choices(e)
         f = [c[0], d[0], d[0], "_", d[0]]
         username = ''.join(f)
-    elif choice == "رباعي2":
+    elif choice == "رباعي1":
         c = d = random.choices(a)
         d = random.choices(e)
         f = [c[0], d[0], c[0], "_", c[0]]
         username = ''.join(f)
-    elif choice == "رباعي3":
+    elif choice == "رباعي2":
         c = d = random.choices(a)
         d = random.choices(e)
         f = [c[0], c[0], d[0], "_", c[0]]
         username = ''.join(f)
 
-    elif choice == "رباعي4":
+    elif choice == "سداسي1":
+        c = d = random.choices(a)
+        d = random.choices(e)
+        f = [c[0], c[0], c[0], d[0], d[0], d[0]]
+        username = ''.join(f)
+
+    elif choice == "سداسي2":
+        c = d = random.choices(a)
+        d = random.choices(e)
+        f = [c[0], c[0], d[0], d[0], d[0], c[0]]
+        username = ''.join(f)
+
+    elif choice == "سداسي3":
+        c = d = random.choices(a)
+        d = random.choices(e)
+        f = [c[0], d[0], d[0], d[0], c[0], c[0]]
+        username = ''.join(f)
+        
+    elif choice == "سداسي4":
+        c = d = random.choices(a)
+        d = random.choices(a)
+        f = [c[0], d[0], c[0], c[0], d[0], d[0]]
+        random.shuffle(f)
+        username = ''.join(f)
+        
+    elif choice == "رباعي3":
         c = d = random.choices(a)
         d = random.choices(e)
         f = [c[0], c[0], c[0], "_", d[0]]
-        username = ''.join(f)
-
-    elif choice == "رباعي5":
-        c = d = random.choices(a)
-        d = random.choices(e)
-        f = [c[0], d[0], "_", d[0], d[0]]
-        username = ''.join(f)
-
-    elif choice == "رباعي6":
-        c = d = random.choices(a)
-        d = random.choices(e)
-        f = [c[0], d[0], "_", c[0], c[0]]
-        username = ''.join(f)
-        
-    elif choice == "رباعي7":
-        c = d = random.choices(a)
-        d = random.choices(e)
-        f = [c[0], c[0], "_", d[0], c[0]]
-        username = ''.join(f)
-        
-    elif choice == "رباعي8":
-        c = d = random.choices(a)
-        d = random.choices(e)
-        f = [c[0], c[0], "_", c[0], d[0]]
         username = ''.join(f)
     else:
         return "error"
@@ -123,31 +124,31 @@ async def _(event):
  الانواع :
  -- -- -- -- - 
  رباعي
- s_uuu - { عشوائي }
+ sxx_x - s88_8
  -- -- -- -- -- -- -- -- -- -- --
   رباعي1
-  sxx_x - s88_8
+  sxs_s - s3s_s
  -- -- -- -- -- 
  رباعي2
- sxs_s - s8s_s
-  -- -- -- -- --  
+ ssx_s - ss8_s
+  -- -- -- -- --
   رباعي3
-  ssx_s - ss8_s
+  sss_x
+  -- -- -- -- --  
+  سداسي 
+  sssxxx - sss888 { عشوائي }
  -- -- -- -- --
- رباعي4
- sss_x - sss_8
+ سداسي1
+ sssxxx - sss888
  -- -- -- -- -- 
- رباعي5
- sx_xx - s8_88
+ سداسي2
+ss888s
  -- -- -- -- -- 
- رباعي6
- sx_ss - s8_ss
+ سداسي3
+ s888ss
  -- -- -- -- -- 
- رباعي7
- ss_8s
-  -- -- -- -- -- 
-  رباعي8
-  ss_s8
+ سداسي4
+sxxsxs - { حروف }
    -- -- -- -- -- 
    طريقه الصيد هيه كالتالي
  - .صيد + نوع الصيد تكتب الاسم 
@@ -187,8 +188,8 @@ async def hunterusername(event):
         try:
             ch = await eighthon(
                 functions.channels.CreateChannelRequest(
-                    title="صيد معرفات رباعي حرف",
-                    about="تم الصيد رباعي",
+                    title="صيد معرفات رباعي - سداسي",
+                    about="تم الصيد رباعي - سداسي",
                 )
             )
             ch = ch.updates[1].channel_id
@@ -244,7 +245,7 @@ async def hunterusername(event):
         trys[0] += 1
     isclaim.clear()
     isclaim.append("off")
-    await event.client.send_message(event.chat_id, "@P8_PP انتهاء الفحص تم صيد رباعي #x5")
+    await event.client.send_message(event.chat_id, "المطور - @wwwwn انتهاء الفحص تم صيد رباعي - سداسي #x5 ")
 
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تثبيت"))
